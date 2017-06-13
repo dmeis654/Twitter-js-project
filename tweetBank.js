@@ -3,7 +3,7 @@ const _ = require('lodash');
 var tweets = []
 
 function add (name, content) {
-  tweets.push({ name: name, content: content });
+  tweets.push({id: tweets.length + 1, name: name, content: content });
 }
 
 function list () {
