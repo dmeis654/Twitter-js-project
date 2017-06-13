@@ -19,10 +19,6 @@
         <h3><a href="/users/{{tweet.name}}">{{tweet.name}}</a> - {{tweet.content}}</h3>
         <!--<h3> {{tweet.content}} </h3>-->
       {% endfor %}
-      
-    </div>
-  </div>
-  <div>
   {% if showForm %}
   <form action="/tweets" method="POST">
     <label for="name_field">Name:</label>
@@ -33,8 +29,9 @@
 
     <input type="submit" value="Submit" />
   </form>
+  {% endif %}
+    </div>
   </div>
-{% endif %}
     
 {% endblock %}
 Raw

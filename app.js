@@ -4,6 +4,9 @@ const bodyParser = require('body-parser')
 const app = express();
 const people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
 const routes = require('./routes');
+const socketio = require('socket.io')
+const server = app.listen(3000)
+const io = socketio.listen(server)
 
 var locals = {
     title: 'An Example',
@@ -26,7 +29,8 @@ nunjucks.render('index.html', locals, function (err, output) {
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.use('/', routes);
+// app.use('/', routes);
+app.use( '/', routes(io) );
 
 app.use(express.static('public'));
 
@@ -39,8 +43,6 @@ app.use(express.static('public'));
 //   res.render( 'index', {title: 'Hall of Fame', people: locals.people} );
 // })
 
-
-
-app.listen(3000, function(){
-    console.log("server listening")
-})
+// app.listen(3000, function(){
+//     console.log("server listening")
+// })
