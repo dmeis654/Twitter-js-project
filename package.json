@@ -1,0 +1,14 @@
+{
+  "name": "twitter.js",
+  "version": "1.0.0",
+  "description": "a cool tweet app",
+  "main": "appp.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
